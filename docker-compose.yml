@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  wordpress:
+    image: wordpress:5.7-php7.4
+    restart: unless-stopped
+    ports:
+      - 8000:80
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: username
+      WORDPRESS_DB_PASSWORD: password
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - wordpress:/var/www/html
+#Inicio Nueva Linea proyectos
+      - ${PWD}/temas/elinformador:/var/www/html/wp-content/themes/elinformador #Tema ya creado solo lo cargo para verificar funcionamiento
+      - ${PWD}/temas/DevWP:/var/www/html/wp-content/themes/DevWP #Tema para desarrollo este es en el que voy a trabajar
+#Fin Nueva Linea proyectos
+  mysql:
+    image: mysql:5.7
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: username
+      MYSQL_PASSWORD: password
+      MYSQL_RANDOM_ROOT_PASSWORD: "1"
+    volumes:
+      - mysql:/var/lib/mysql
+
+volumes:
+  wordpress:
+  mysql:
