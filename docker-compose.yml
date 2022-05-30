@@ -18,6 +18,9 @@ services:
       - ${PWD}/temas/DevWP:/var/www/html/wp-content/themes/DevWP #Tema para desarrollo este es en el que voy a trabajar
      # - ${PWD}/temas/SUITE_ADOBE.zip:/var/www/html/wp-content/themes/suite.zip #Test
 #Fin Nueva Linea proyectos
+#Inicio para almacenar plugins fuera del contenedor
+      - ${PWD}/plugins/:/var/www/html/wp-content/plugins/
+#Fin
   mysql:
     image: mysql:5.7
     restart: unless-stopped
