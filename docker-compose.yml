@@ -21,7 +21,7 @@ services:
 #Inicio para almacenar plugins fuera del contenedor
       - ${PWD}/plugins/:/var/www/html/wp-content/plugins/
 #Fin
-#Inicio para almacenar archivos multimedia
+#Inicio para almacenar archivos multimedia fuera del contenedor y luego mapearlo
       - ${PWD}/multimedia:/var/www/html/wp-content/uploads
 #Fin
   mysql:
