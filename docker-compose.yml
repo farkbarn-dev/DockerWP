@@ -14,7 +14,7 @@ services:
     volumes:
       - wordpress:/var/www/html
 #Inicio Nueva Linea proyectos
-      - ${PWD}/temas/ElInformador:/var/www/html/wp-content/themes/elinformador #Tema ya creado solo lo cargo para verificar funcionamiento
+      - ${PWD}/temas/ElInformador:/var/www/html/wp-content/themes/ElInformador #Tema ya creado solo lo cargo para verificar funcionamiento
       - ${PWD}/temas/DevWP:/var/www/html/wp-content/themes/DevWP #Tema para desarrollo este es en el que voy a trabajar
      # - ${PWD}/temas/SUITE_ADOBE.zip:/var/www/html/wp-content/themes/suite.zip #Test
 #Fin Nueva Linea proyectos
@@ -27,7 +27,8 @@ services:
       MYSQL_PASSWORD: password
       MYSQL_RANDOM_ROOT_PASSWORD: "1"
     volumes:
-      - mysql:/var/lib/mysql
+      #- mysql:/var/lib/mysql
+      - ./db:/var/lib/mysql
 
 volumes:
   wordpress:
