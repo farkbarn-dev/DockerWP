@@ -28,7 +28,7 @@ services:
       MYSQL_RANDOM_ROOT_PASSWORD: "1"
     volumes:
       #- mysql:/var/lib/mysql
-      - ./db:/var/lib/mysql
+      - ./db:/var/lib/mysql #almacenando los datos fuera del contenedor
 
 volumes:
   wordpress:
