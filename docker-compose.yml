@@ -21,6 +21,9 @@ services:
 #Inicio para almacenar plugins fuera del contenedor
       - ${PWD}/plugins/:/var/www/html/wp-content/plugins/
 #Fin
+#Inicio para almacenar archivos multimedia
+      - ${PWD}/multimedia:/var/www/html/wp-content/uploads
+#Fin
   mysql:
     image: mysql:5.7
     restart: unless-stopped
