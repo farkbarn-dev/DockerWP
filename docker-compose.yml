@@ -16,7 +16,7 @@ services:
 #Inicio Nueva Linea proyectos
       - ${PWD}/temas/ElInformador:/var/www/html/wp-content/themes/ElInformador #Tema ya creado solo lo cargo para verificar funcionamiento
       - ${PWD}/temas/DevWP:/var/www/html/wp-content/themes/DevWP #Tema para desarrollo este es en el que voy a trabajar
-     # - ${PWD}/temas/SUITE_ADOBE.zip:/var/www/html/wp-content/themes/suite.zip #Test
+      - ${PWD}/temas/SUITE_ADOBE.zip:/var/www/html/wp-content/themes/suite.zip #Test
 #Fin Nueva Linea proyectos
 #Inicio para almacenar plugins fuera del contenedor
       - ${PWD}/plugins/:/var/www/html/wp-content/plugins/
@@ -35,6 +35,10 @@ services:
     volumes:
       #- mysql:/var/lib/mysql
       - ./db:/var/lib/mysql #almacenando los datos fuera del contenedor
+    expose:
+      - 3306
+    ports:
+      - 3306:3306
 
 volumes:
   wordpress:
