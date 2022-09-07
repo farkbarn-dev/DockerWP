@@ -9,4 +9,4 @@ docker-compose start servicio
 docker-compose ps
 docker-compose ps servicio
 docker-compose top servicio
-
+docker stop $(docker ps -a -q)
